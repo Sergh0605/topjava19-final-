@@ -38,7 +38,10 @@
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 3. <a href="https://drive.google.com/open?id=1aq3hDmUUdWJujsX6zTqookJjXWOD3PBJ">HW0 Optional 2: реализация в один проход и одной строкой Stream API</a>
 
 #### Apply 1_3_HW0_optional2.patch
- [VK: Java программист: от новичка до профессионала](https://vk.com/javawebinar)
+- [VK: Java программист: от новичка до профессионала](https://vk.com/javawebinar)
+- Дополнительно:
+  - [Первое занятие MasterJava: многопоточность](https://github.com/JavaOPs/masterjava)
+  - [Обзор java.util.concurrent.*](https://habr.com/ru/company/luxoft/blog/157273/)
  
 ## Занятие 1:
 
