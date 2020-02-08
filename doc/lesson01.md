@@ -104,6 +104,7 @@
 ```
 <user username="tomcat" password="tomcat" roles="tomcat,manager-gui,admin-gui"/>
 ```
+- Если проблема с Tomcat debug и работает Dr.Web- нежно его отключить, либо добавить в исключения путь к  `.IntelliJIdea2019.3/`
 - Наше приложение: [http://localhost:8080/topjava](http://localhost:8080/topjava)
 - Наш сервлет:     [http://localhost:8080/topjava/users](http://localhost:8080/topjava/users)
 - [Настройки Remote Debug в новой IDEA](https://github.com/JavaOPs/topjava/wiki/IDEA#remote-debug-в-новой-idea)
