@@ -230,7 +230,7 @@
   - 2.5: Не дублируйте код в `getAll` и метод с фильтрацией
   - 2.6: попробуйте учесть, что следующая реализация (сортировка, фильтрация) будет делаться прямо в базе данных
 - 3: Проверьте, что удалили `Meal.id` и связанные с ним методы (он уже есть в базовом `BaseEntity`)
-- 4: Проверку `isBetweenDate` сделать в `DateTimeUtil`. Попробуйте использовать дженерики и объединить ее с `isBetweenTime` (см. [Generics Tutorials](https://docs.oracle.com/javase/tutorial/extra/generics/morefun.html))
+- 4: Проверку `isBetweenInclusive` с датами сделать в `DateTimeUtil`. Попробуйте использовать дженерики и объединить ее с `isBetweenInclusive` со временем (см. [Generics Tutorials](https://docs.oracle.com/javase/tutorial/extra/generics/morefun.html))
 - 5: **Реализация 'MealRestController' должен уметь обрабатывать запросы**:
   - 5.1: Отдать свою еду (для отображения в таблице, формат `List<MealTo>`), запрос БЕЗ параметров
   - 5.2: Отдать свою еду, отфильтрованную по startDate, startTime, endDate, endTime
