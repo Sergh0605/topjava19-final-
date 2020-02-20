@@ -23,12 +23,12 @@
 - [Should services always return DTOs, or can they also return domain models?](http://stackoverflow.com/questions/21554977/should-services-always-return-dtos-or-can-they-also-return-domain-models)
 - [Mapping Entity->DTO goes in which application layer: Controller or Service?](http://stackoverflow.com/questions/31644131/spring-dto-dao-resource-entity-mapping-goes-in-which-application-layer-cont/35798539#35798539)
 
+### Рефакторинг InMemory репозиториев
 #### Apply 3_04_refactor_repository.patch
-- убрал дублирование в `InMemory` реализациях: 
-  - сделал базовый `InMemoryBaseRepository` 
-  - наследую от него `InMemoryUserRepository`
-  - использую его в `InMemoryMealRepository` вместо `Map<Integer, Meal>`
-  - обратите внимание на `InMemoryBaseRepository.counter` - счетчик один, общий для всех хранимых объектов
+- сделал базовый `InMemoryBaseRepository` 
+- наследую от него `InMemoryUserRepository`
+- использую его в `InMemoryMealRepository` вместо `Map<Integer, Meal>`
+- обратите внимание на `InMemoryBaseRepository.counter` - счетчик один, общий для всех хранимых объектов
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 4. [HW2 Optional](https://drive.google.com/file/d/1yzNvGBgjgtuKXDFo983OqtTNoHDbyn1z)
 #### Apply 3_05_HW2_optional_MealServlet.patch
