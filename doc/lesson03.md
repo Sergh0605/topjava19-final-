@@ -71,6 +71,9 @@
 > - переименовал тестовые классы 
 > - в тестах ОЧЕНЬ частая ошибка - менять местами `expected` (ожидаемое) и `actual` (фактическое) значения. Поправил `Assert.assertEquals` в `InMemoryAdminRestControllerTest`
 
+- [Тестирование с помощью JUnit (Test Case)](http://www.javenue.info/post/19)
+- [Тестирование кода Java с помощью фреймворка JUnit](https://www.youtube.com/watch?v=z9jEVLCF5_w) (youtube)
+
 #### Apply 3_09_add_junit.patch
 ### После патча сделайте `clean` и [обновите зависимости Maven](https://github.com/JavaOPs/topjava/wiki/IDEA#%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8-%D0%B2-maven-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B5), чтобы IDEA определила сорсы тестов
 #### ![question](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png) Вопрос: почему проект упадет при попытке открыть страничку еды (в логе смотреть самый верх самого нижнего исключения)?
