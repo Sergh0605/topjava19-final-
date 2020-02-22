@@ -66,6 +66,8 @@
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png)  6. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFODlkU1B0QnNnSGs">Тестирование через JUnit.</a>
 ### ВНИМАНИЕ!! Перед накаткой патча создайте каталог test (из корня проекта путь `\src\test`), иначе часть файлов попадет в `src\main`.
 
+Все классы, которые не нужны при работе приложения переносятся в test (и не включаются в сборку)
+
 > - в `maven-surefire-plugin` (JUnit) <a href="http://stackoverflow.com/questions/17656475/maven-source-encoding-in-utf-8-not-working/17671104#17671104">поменял кодировку на UTF-8</a>
 > - добавил метод `InMemoryUserRepository.init()` для инициализации.
 > - переименовал тестовые классы 
