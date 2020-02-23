@@ -145,6 +145,7 @@ GRANT ALL PRIVILEGES ON DATABASE topjava TO "user";
 
 -  Подключение <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/data-access.html#jdbc">Spring Jdbc</a>.
 -  Конфигурирование DataSource. <a href="http://www.mkyong.com/spring/spring-propertyplaceholderconfigurer-example/">Property Placeholder</a>
+-  Интеграция `JdbcUserRepository` с DB: [IDEA Wiki](https://github.com/JavaOPs/topjava/wiki/IDEA) -> Добавить поддержку DB в JDBC
 
 >  Проверьте, что в контекст Spring проекта включены оба файла конфигурации
 
