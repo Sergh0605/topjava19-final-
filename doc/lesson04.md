@@ -23,15 +23,15 @@
 
 **Примечание**: в ответе на [Why is SELECT * considered harmful?](https://stackoverflow.com/questions/3639861) есть случаи, когда она допустима (наш случай): `when "*" means "a row"`
 
-- **[Сравнение времени выполнения для разных индексов](meals_index.md)**
-  - <a href="http://stackoverflow.com/questions/970562/postgres-and-indexes-on-foreign-keys-and-primary-keys">На id как на primary key индекс создается автоматически</a>.
-  - все запросы в таблицу meals у нас идут с `user_id`
-  - по полю `date_time` также есть запросы + мы по нему сортируем список результатов, те они - хорошие кандидаты для индексирования.
-  - следует иметь в виду: индексы ускоряют операции чтения, но замедляют вставку и удаление, поэтому необходим анализ в реальном приложении
-  - [Оптимизация запросов. Основы EXPLAIN в PostgreSQL](https://habrahabr.ru/post/203320/)
-  - [Оптимизация запросов. Часть 2](https://habrahabr.ru/post/203386/)
-  - [Оптимизация запросов. Часть 3](https://habrahabr.ru/post/203484/)
-  - [Документация Postgres: индексы](https://postgrespro.ru/docs/postgresql/9.6/indexes.html)
+#### [Сравнение времени выполнения для разных индексов](meals_index.md)
+- <a href="http://stackoverflow.com/questions/970562/postgres-and-indexes-on-foreign-keys-and-primary-keys">На id как на primary key индекс создается автоматически</a>.
+- все запросы в таблицу meals у нас идут с `user_id`
+- по полю `date_time` также есть запросы + мы по нему сортируем список результатов, те они - хорошие кандидаты для индексирования.
+- следует иметь в виду: индексы ускоряют операции чтения, но замедляют вставку и удаление, поэтому необходим анализ в реальном приложении
+- [Оптимизация запросов. Основы EXPLAIN в PostgreSQL](https://habrahabr.ru/post/203320/)
+- [Оптимизация запросов. Часть 2](https://habrahabr.ru/post/203386/)
+- [Оптимизация запросов. Часть 3](https://habrahabr.ru/post/203484/)
+- [Документация Postgres: индексы](https://postgrespro.ru/docs/postgresql/9.6/indexes.html)
 
 #### **Apply 4_2_HW3_optional.patch**
 > Удалил лишние `MealsUtil.MEALS`
