@@ -65,15 +65,13 @@
 > - Поменял `LoggedUser` на `SecurityUtil`. Это класс, из которого приложение будет получать данные авторизированного пользователя (пока авторизации нет, он реализован как заглушка). Находится в пакете `web`, т.к. авторизация происходит на слое контроллеров и остальные слои приложения про нее знать не должны.
 > - Добавил проверку id пользователя, пришедшего в контроллер ([treat IDs in REST body](https://stackoverflow.com/a/32728226/548473), "If it is a public API you should be conservative when you reply, but accept liberally")
 
-![Слои приложения](http://4.bp.blogspot.com/-B4BdrPHfILA/Tu6dC5uK4dI/AAAAAAAAAeQ/iPEM0WctR7Y/s1600/Roo+Technical+Architecture+Diagram.png)
-
+![Слои приложения](http://javaops.ru/static/images/topjava/top-scheme.jpg)
 -  <a href="http://en.wikipedia.org/wiki/Multilayered_architecture">Паттерн "Слои приложения"</a>
 -  <a href="https://ru.wikipedia.org/wiki/Data_Access_Object">Data Access Object</a>
 -  <a href="http://martinfowler.com/eaaCatalog/dataTransferObject.html">Паттерн DTO</a>
 -  <a href="http://stackoverflow.com/questions/1612334/difference-between-dto-vo-pojo-javabeans">Value Object и Data Transfer Object</a>
 -  <a href="http://stackoverflow.com/questions/21554977/should-services-always-return-dtos-or-can-they-also-return-domain-models">Should services always return DTOs, or can they also return domain models?</a>
 - [Mapping Entity->DTO goes in which application layer: Controller or Service?](http://stackoverflow.com/questions/31644131/spring-dto-dao-resource-entity-mapping-goes-in-which-application-layer-cont/35798539#35798539)
-
 -  Дополнительно:
    -  <a href="http://codehelper.ru/questions/205/new/repository-и-dao-отличия-преимущества-недостатки">Паттерны Repository и DAO</a>
    - <a href="http://habrahabr.ru/post/263033/">Забудьте о DAO, используйте Repository</a>
