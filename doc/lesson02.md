@@ -57,25 +57,26 @@
   - Guava используется на проекте [Многомодульный maven. Многопоточность. XML (JAXB/StAX). Веб сервисы (JAX-RS/SOAP). Удаленное взаимодействие (JMS/AKKA)](http://javaops.ru/reg/masterjava)  
    
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 4. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFeWZ1d1cxaUZiUmc">Слои приложения. Создание каркаса приложения.</a>
-#### Apply 2_3_app_layers.patch
-> - Убрал интерфейсы к сервисам. Я всегда предпочитаю писать меньше кода и в случае с одной реализацией можно обходится без них. 
-    По поводу инкапсуляции и отделения API от реализации - мне кажется сейчас все стремится к упрощению, в том числе и в жизни разработчиков.
-> - Убрал `throws NotFoundException` из объявлений методов `UserService`. Обчно эксепшены, отнаследованные от `RuntimeException` не объявляют. 
-> - Переименовал `ExceptionUtil` в `ValidationUtil`
-> - Поменял `LoggedUser` на `SecurityUtil`. Это класс, из которого приложение будет получать данные авторизированного пользователя (пока авторизации нет, он реализован как заглушка). Находится в пакете `web`, т.к. авторизация происходит на слое контроллеров и остальные слои приложения про нее знать не должны.
-> - Добавил проверку id пользователя, пришедшего в контроллер ([treat IDs in REST body](https://stackoverflow.com/a/32728226/548473), "If it is a public API you should be conservative when you reply, but accept liberally")
-
 ![Слои приложения](http://javaops.ru/static/images/topjava/top-scheme.jpg)
 -  <a href="https://metanit.com/sharp/mvc5/23.5.php">Многоуровневая(многослойная) архитектура</a>
 -  <a href="https://ru.wikipedia.org/wiki/Data_Access_Object">Data Access Object</a>
 -  <a href="http://martinfowler.com/eaaCatalog/dataTransferObject.html">Паттерн DTO</a>
--  <a href="http://stackoverflow.com/questions/1612334/difference-between-dto-vo-pojo-javabeans">Value Object и Data Transfer Object</a>
 -  <a href="http://stackoverflow.com/questions/21554977/should-services-always-return-dtos-or-can-they-also-return-domain-models">Should services always return DTOs, or can they also return domain models?</a>
 - [Mapping Entity->DTO goes in which application layer: Controller or Service?](http://stackoverflow.com/questions/31644131/spring-dto-dao-resource-entity-mapping-goes-in-which-application-layer-cont/35798539#35798539)
 -  Дополнительно:
+   -  <a href="http://stackoverflow.com/questions/1612334/difference-between-dto-vo-pojo-javabeans">Value Object и Data Transfer Object</a>
    -  <a href="http://codehelper.ru/questions/205/new/repository-и-dao-отличия-преимущества-недостатки">Паттерны Repository и DAO</a>
    - <a href="http://habrahabr.ru/post/263033/">Забудьте о DAO, используйте Repository</a>
    - <a href="http://stackoverflow.com/questions/6640784/difference-between-active-record-and-dao">Difference between Active Record and DAO</a>
+
+### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 4. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFeWZ1d1cxaUZiUmc">Реализация слоев для пользователей.</a>
+
+#### Apply 2_3_app_layers.patch
+> - Убрал интерфейсы к сервисам. Я всегда предпочитаю писать меньше кода и в случае с одной реализацией можно обходится без них. 
+    По поводу инкапсуляции и отделения API от реализации - мне кажется сейчас все стремится к упрощению, в том числе и в жизни разработчиков.
+> - Переименовал `ExceptionUtil` в `ValidationUtil`
+> - Поменял `LoggedUser` на `SecurityUtil`. Это класс, из которого приложение будет получать данные авторизированного пользователя (пока авторизации нет, он реализован как заглушка). Находится в пакете `web`, т.к. авторизация происходит на слое контроллеров и остальные слои приложения про нее знать не должны.
+> - Добавил проверку id пользователя, пришедшего в контроллер ([treat IDs in REST body](https://stackoverflow.com/a/32728226/548473), "If it is a public API you should be conservative when you reply, but accept liberally")
 
 ## ![question](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png) Ваши вопросы
 
@@ -116,7 +117,7 @@
 
 Вообще, как правило, возвращают `List`, если не просится по коду более общий случай (например возможный `Set` или `Collection`, возвращаемый `Map.values()`). Если возвращается отсортированный список, то `List` будет адекватнее.
 
-###  ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 5. <a href="https://drive.google.com/open?id=14XPypWzxYdjxir6dGTjqTOCBZUu_Jy3C">Обзор  Spring Framework. Spring Context.</a>
+###  ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 6. <a href="https://drive.google.com/open?id=14XPypWzxYdjxir6dGTjqTOCBZUu_Jy3C">Обзор  Spring Framework. Spring Context.</a>
 >  [Видео про миграцию на Spring 5](http://javaops.ru/view/resources/spring5) у нас будет позже. Изменения в логгировании - [Spring Framework 5.0 comes with its own Commons Logging bridge out of the box](https://github.com/spring-projects/spring-framework/wiki/What's-New-in-Spring-Framework-5.x):
 >  - spring-jcl instead of standard Commons Logging
 >  - Autodetecting Log4j 2.x, SLF4J, JUL (java.util.logging) without any extra bridges. 
@@ -157,7 +158,7 @@
    - [Java Brains: Spring Framework](https://www.youtube.com/playlist?list=PLC97BDEFDCDD169D7)
    - [Тимур Батыршинов: Введение в Spring](https://www.youtube.com/watch?v=MnUThz43viE&list=PL8X2nqRlWfaax2odRVXpnYXwWEF4d4s-J)
 
-### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 6. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFN2N6LS1PVE96SW8">Пояснения к HW2. Обработка Autowired</a>
+### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 7. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFN2N6LS1PVE96SW8">Пояснения к HW2. Обработка Autowired</a>
   
 `<context:annotation-config/>` говорит спрингу при поднятии контекста обрабатывать `@Autowired` (добавляется в контекст спринга `AutowiredAnnotationBeanPostProcessor`). После того, как все бины уже в контексте постпроцессор через отражение инжектит все `@Autowired` зависимости. Будет подробнее в видео "Жизненный цикл Spring контекста" на следующем уроке.
  
