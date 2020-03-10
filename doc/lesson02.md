@@ -122,6 +122,8 @@
 >  - spring-jcl instead of standard Commons Logging
 >  - Autodetecting Log4j 2.x, SLF4J, JUL (java.util.logging) without any extra bridges. 
 
+**[Что такое Spring Framework? От внедрения зависимостей до Web MVC](https://habr.com/ru/post/490586)**
+
 #### Apply 2_4_add_spring_context.patch
 -  <a href="http://en.wikipedia.org/wiki/Spring_Framework">Spring Framework</a>
 -  <a href="http://spring.io/projects">Проекты Spring</a>.
