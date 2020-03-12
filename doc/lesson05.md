@@ -51,6 +51,7 @@
 > - При сравнении еды тесты падают, т.к. Hibernate делает ленивую обертку к `user`, и если происходит обращение к любому его полю (кроме id) вне транзакции, бросается `LazyInitializationException`.
 По логике приложения поле `user` в еде не нужно, и мы не будем его отдавать наружу: в тестах исключаем `user` из сравнения.
 > - Поменял реализацию `JpaMealRepository.get()` (вместо `@NamedQuery`), реализация стали проще
+> - Сделал `JpaMealRepository.save` проще и понятнее (`em.getReference` не делает запрос в базу и чужая еда- не основной юзкейс)
 > - Вместо BETWEEN (и CAST) в JPA реализации сделал [Half Open сравнение](https://stackoverflow.com/a/20536041/548473).
 См. также [SQL “between” not inclusive](https://stackoverflow.com/questions/16347649/sql-between-not-inclusive/16347680)   
 
