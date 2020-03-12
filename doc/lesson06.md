@@ -66,7 +66,7 @@ C `@BatchSize(size = 200)` делается запрос на юзеров (1), 
 ## Занятие 6:
 
 ### Добавил тесты на валидацию
-> - К сожалению, в JUnit <a href="https://github.com/junit-team/junit4/pull/778">нет `ExpectedException.expectRootCause`</a>. `AbstractServiceTest.validateRootCause()` сделал через JUnit 4.13 `assertThrows`. 
+> - К сожалению, в JUnit <a href="https://github.com/junit-team/junit4/pull/778">нет `ExpectedException.expectRootCause`</a>. `AbstractServiceTest.validateRootCause()` сделал через [JUnit 4.13 assertThrows](https://stackoverflow.com/a/2935935/548473). 
 
  > ![](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png) Откуда у нас берется `ConstraintViolationException` в тестах на валидацию? Для каких наших исключений он является рутом?
  
