@@ -18,9 +18,9 @@
 Транзакция начинается, когда встречается первая `@Transactional`. С default propagation `REQUIRED` остальные `@Transactional` просто участвуют в первой. Поэтому ставим аннотацию сверху `DataJpaMealRepository.save()`, чтобы все обращения к базе внутри метода были в одной транзакции. Аналогично, если из сервиса собирается несколько запросов к репозиториям, `@Transactional` ставится над методом сервиса.
 
 #### Apply 6_02_HW5_profile_test.patch
-**Для IDEA в `spring-db.xml` не забудьте выставить Spring Profiles: например, `datajpa, postgres`**
+**Для IDEA в `spring-db.xml` не забудьте выставить Spring Profiles. Например `datajpa, postgres`**
 
-> - В `Abstract...ServiceTest` IDEA тупит: у нее нет активного профиля для однозначного определения реализации репозитория. [Использовал @SuppressWarnings](https://stackoverflow.com/questions/21323309/intellij-idea-shows-errors-when-using-springs-autowired-annotation)
+> - В `Abstract..ServiceTest` IDEA тупит: у нее нет активного профиля для однозначного определения реализации репозитория. [Использовал @SuppressWarnings](https://stackoverflow.com/questions/21323309/intellij-idea-shows-errors-when-using-springs-autowired-annotation)
 > - `DbTest` переименовал в `AbstractServiceTest` и сюда перенес `@ActiveProfiles(resolver = ActiveDbProfileResolver.class)`
 > - Заменил `description.getMethodName()` на `getDisplayName()` в выводе результатов тестов. После `printResult()` буфер сбрасывается в 0, чтобы не накапливать изменения. 
 
@@ -68,7 +68,7 @@ C `@BatchSize(size = 200)` делается запрос на юзеров (1), 
 ### Добавил тесты на валидацию
 > - К сожалению, в JUnit <a href="https://github.com/junit-team/junit4/pull/778">нет `ExpectedException.expectRootCause`</a>. `AbstractServiceTest.validateRootCause()` сделал через JUnit 4.13 `assertThrows`. 
 
- > ![](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png) Откуда у нас берется ConstraintViolationException в тестах на валидацию? Для каких наших исключений он является рутом?
+ > ![](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png) Откуда у нас берется `ConstraintViolationException` в тестах на валидацию? Для каких наших исключений он является рутом?
  
  Прежде всего - пользуйтесь дебагом! Исключение легко увидеть в методе `getRootCause()`. Если подебажить выполение Hibernate валидации, то можно найти, где обрабатываются аннотации валидации и место в `org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate()`, где бросается `ConstraintViolationException`.
 
@@ -282,7 +282,9 @@ Hibernate supports following open-source cache implementations out-of-the-box: E
 - 2.5 Починить ВСЕ тесты (тесты должны проходить для юзера с несколькими ролями)  
 
 ### Optional 2 (повышенной сложности)
-- 3: Отключить кэш в тестах: `NoOpCacheManager` и для кэша Hibernate 2-го уровня `hibernate.cache.use_second_level_cache=false`. 
+- 3.1 Добавить валидацию для `Jdbc..Repository` через Bean Validation API. Оптимизировать код.
+   - [Валидация данных при помощи Bean Validation API](https://alexkosarev.name/2018/07/30/bean-validation-api/) 
+- 3.2 Отключить кэш в тестах через `NoOpCacheManager` и для кэша Hibernate 2-го уровня `hibernate.cache.use_second_level_cache=false`. 
   - [JPA 2.0 disable session cache for unit tests](https://stackoverflow.com/a/58963737/548473)
   - [Example of PropertyOverrideConfigurer](https://www.concretepage.com/spring/example_propertyoverrideconfigurer_spring)
   - [Spring util schema](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#xsd-schemas-util)      
