@@ -266,7 +266,7 @@ Hibernate supports following open-source cache implementations out-of-the-box: E
 - 1.2 Починить тесты Jdbc (валидацию исключить)
   - <a href="http://iliachemodanov.ru/ru/blog-ru/12-tools/57-junit-ignore-test-by-condition-ru">org.junit.Assume</a>
   - <a href="http://www.ekiras.com/2015/09/spring-how-to-get-current-profiles-in-spring-application.html">How to get Current Profiles in Spring Application</a>
-- 1.3 Удалить сервлеты и перенести функциональность `MealServlet` в `JspMealController` контроллер (по аналогии с `RootController`).
+- 1.3 Перенести функциональность `MealServlet` в `JspMealController` контроллер (по аналогии с `RootController`).
 `MealRestController` у нас останется, с ним будем работать позже. 
   - 1.3.1 разнести запросы на update/delete/.. по разным методам (попробуйте вообще без `action=`). Можно по аналогии с `RootController#setUser` принимать `HttpServletRequest request` (аннотации на параметры и адаптеры для `LocalDate/Time` мы введем позже). 
   - 1.3.2 в одном контроллере нельзя использовать другой. Чтобы не дублировать код, можно сделать наследование контроллеров от абстрактного класса.
