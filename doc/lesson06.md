@@ -279,11 +279,11 @@ Hibernate supports following open-source cache implementations out-of-the-box: E
   - 2.3.1 В реализации `getAll` НЕ делать запрос ролей для каждого юзера (N+1 select)
   - 2.3.2 При save посмотрите на <a href="https://www.mkyong.com/spring/spring-jdbctemplate-batchupdate-example/">batchUpdate()</a>
 - 2.4 Добавить проверку ролей в `UserTestData.USER_MATCHER.assertMatch` и починить ВСЕ тесты (тесты должны проходить для юзера с несколькими ролями)  
+- 2.5 Добавить валидацию для `Jdbc..Repository` через Bean Validation API. Оптимизировать код.
+   - [Валидация данных при помощи Bean Validation API](https://alexkosarev.name/2018/07/30/bean-validation-api/) 
 
 ### Optional 2 (повышенной сложности)
-- 3.1 Добавить валидацию для `Jdbc..Repository` через Bean Validation API. Оптимизировать код.
-   - [Валидация данных при помощи Bean Validation API](https://alexkosarev.name/2018/07/30/bean-validation-api/) 
-- 3.2 Отключить кэш в тестах через `NoOpCacheManager` и для кэша Hibernate 2-го уровня `hibernate.cache.use_second_level_cache=false`. 
+- 3 Отключить кэш в тестах через `NoOpCacheManager` и для кэша Hibernate 2-го уровня `hibernate.cache.use_second_level_cache=false`. 
   - [JPA 2.0 disable session cache for unit tests](https://stackoverflow.com/a/58963737/548473)
   - [Example of PropertyOverrideConfigurer](https://www.concretepage.com/spring/example_propertyoverrideconfigurer_spring)
   - [Spring util schema](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#xsd-schemas-util)      
