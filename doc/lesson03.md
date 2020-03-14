@@ -73,7 +73,8 @@
 > - переименовал тестовые классы 
 > - в тестах ОЧЕНЬ частая ошибка - менять местами `expected` (ожидаемое) и `actual` (фактическое) значения. Поправил `Assert.assertEquals` в `InMemoryAdminRestControllerTest`
 
-- [Тестирование с помощью JUnit (Test Case)](http://www.javenue.info/post/19)
+- [Junit — Что почитать по jUnit-тестам](https://i-http.ru/junit-chto-pochitat-po-junit-testam/)
+- [Тестирование с помощью JUnit (Test Case)](http://web.archive.org/web/20190829153452/http://www.javenue.info/post/19)
 - [Тестирование кода Java с помощью фреймворка JUnit](https://www.youtube.com/watch?v=z9jEVLCF5_w) (youtube)
 
 #### Apply 3_09_add_junit.patch
