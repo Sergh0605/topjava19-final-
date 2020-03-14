@@ -135,7 +135,7 @@
 > Сделал автоматический выбор профиля базы при запуске приложения (тестов) в зависимости от присутствия драйвера базы в classpath (`Profiles.getActiveDbProfile()`)
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 5. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFTWJOdHduOWtNcTA">Пул коннектов</a>
-![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) [Александр Колесников - JDBC Pools Battle](https://www.youtube.com/watch?v=J9GzE2qlNuM)
+![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) [Александр Колесников - JDBC Pools Battle](https://www.youtube.com/watch?v=J9GzE2qlNuM&feature=youtu.be&t=2895) (ссылка на выводы)
 
 >  [BoneCP to be deprecated ](https://stackoverflow.com/a/1662916/548473)
 -  Выбор реализации пула коннектов: <a href="https://commons.apache.org/proper/commons-dbcp/">Commons Database Connection Pooling</a>, <a href="https://github.com/brettwooldridge/HikariCP">HikariCP</a>
