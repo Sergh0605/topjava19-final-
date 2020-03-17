@@ -124,7 +124,7 @@
 > **Установите переменную окружения на TOPJAVA_ROOT на корень проекта и перезапустите IDEA. Слеши в пути должны быть в стиле unix (/)**
 - [Set environment for Win/Mac/Unix](https://www.xenovation.com/blog/development/java/how-to-set-java-home)
 - [Set environment for UNIX](https://askubuntu.com/a/849954)
-
+- Или простой вариант (не забудте добавить в Run и Debug)![image](https://user-images.githubusercontent.com/13649199/76862707-8af21180-686f-11ea-9f8c-2bb30ef4c3b2.png)
 
 > - изменения в проекте: убрал `LoggerWrapper` и логирую напрямую в логгер SLF4J. При логгировании через вспомогательный класс, в логе теряется имя исходного класса.
 > - удалил зависимость `jul-to-slf4j`. Она нам не нужна и, согласно <a href="https://www.youtube.com/watch?v=qzqAUUgB3v8">видео Владимира Красильщика про логирование</a>, она замедляет работу
