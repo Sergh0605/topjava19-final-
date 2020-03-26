@@ -14,11 +14,8 @@
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW6
 
-### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 1. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFbUhMdTdESkpFekE">HW6</a>
+### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 1. <a href="https://drive.google.com/open?id=1luHTJOXQW-BWyueqsfzzAeiP8lUTZkje">HW6</a>
 #### Apply 7_01_HW6_fix_tests.patch
-> - Добавил  `AbstractServiceTest.isJpaBased()` и `Assume.assumeTrue(isJpaBased())` в `AbstractMealServiceTest.testValidation()`. 
-> - Вместо наследования от `AbstractJpaUserServiceTest` сделал `@Autowired(required = false) JpaUtil` и кэш чистится по условию `isJpaBased()`. 
-> - В новой версии Spring классы `spring-mvc` требуют `WebApplicationContext`, поэтому поправил `inmemory.xml`
 
 #### Apply 7_02_HW6_meals.patch
 > сделал фильтацию еды через `get`: операция идемпотентная, можно делать в браузере обновление по F5
