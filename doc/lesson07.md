@@ -31,7 +31,7 @@
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 2. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFaXViWkkwYkF0eW8">HW6 Optional</a>
 #### Apply 7_04_HW6_optional_add_role.patch
-> - Для доставания ролей у нас дублируется `fetch = EAGER` и `LEFT JOIN FETCH u.roles` (можно делать что-то одно). Решение с `DISTINCT` можно рассматривать для случая `fetch = LAZY` 
+> - Для доставания ролей у нас дублируется `fetch = EAGER` и `LEFT JOIN FETCH u.roles` (можно делать что-то одно). Запросы выполняются по разному - проверьте. 
 
 `JdbcUserServiceTest` отвалились. Будем чинить в `7_06_HW6_optional_jdbc.patch`
 
@@ -40,8 +40,7 @@
 Для оптимизации можно указать Hibernate делать запрос без distinct: [15.16.2. Using DISTINCT with entity queries](https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#hql-distinct)
    - Бага [HINT_PASS_DISTINCT_THROUGH does not work if 'hibernate.use_sql_comments=true'](https://hibernate.atlassian.net/browse/HHH-13280). При `hibernate.use_sql_comments=false` все работает- в SELECT нет DISTINCT.
 
-- Тест `DataJpaUserServiceTest.testGetWithMeals()` не работает для admin (у админа 2 роли, и еда при JOIN дублируется). `DISTINCT` при нескольких JOIN не помогает.
-Оставил в графе только `meals`. Корректно поставить тип `LOAD`, чтобы остальные ассоциации доставались по стратегии модели. Однако [с типом по умолчанию `FETCH` роли также достаются](https://stackoverflow.com/a/46013654/548473)  (похоже, что бага).
+- Тест `DataJpaUserServiceTest.testGetWithMeals()` не работает для admin (у админа 2 роли, и еда при JOIN дублируется). `DISTINCT` при нескольких JOIN не помогает, оставил в графе только `meals`.
 
 #### Apply 7_06_HW6_optional_jdbc.patch
 > - реализовал в `JdbcUserRepositoryImpl.getAll()` доставание ролей через лямбду
@@ -146,7 +145,7 @@ GROUP BY u.id
   - <a href="https://www.getpostman.com/">Postman</a>
   - [Insomnia REST client](https://insomnia.rest/)
 
-**Импортировать проект в SoapUi из config\Topjava-soapui-project.xml. Response смотреть в формате JSON.**
+**Импортировать проект в SoapUi из `config\Topjava-soapui-project.xml`. Response смотреть в формате JSON.**
 
 >  Проверка UTF-8: <a href="http://localhost:8080/topjava/rest/profile/text">http://localhost:8080/topjava/rest/profile/text</a>
 
