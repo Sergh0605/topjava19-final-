@@ -4,7 +4,7 @@
 
 ### ![correction](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Правки в проекте
 
-#### Apply 7_0_fix.patch
+#### Apply 7_0_1_fix.patch
 - Правки кода
 - Рефакторинг InMemory тестов (починим в патче `7_01_HW6_fix_tests`)
 - В `pom.xml` вместо `context.xml.default` можно делать [индивидуальный контекст приложения](https://stackoverflow.com/a/60797999/548473) 
