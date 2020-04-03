@@ -91,7 +91,8 @@ https://alvinalexander.com/blog/post/java/determine-current-directory-i-e-where-
 JavaScript
 - <a href="https://ru.wikipedia.org/wiki/AJAX">AJAX</a>
 - <a href="https://learn.javascript.ru/introduction-browser-events">Введение в браузерные события</a>
-- [Внешние скрипты, порядок исполнения](https://learn.javascript.ru/external-script)
+- [Скрипты: async, defer](https://learn.javascript.ru/script-async-defer)
+- [With defer, in the head](https://flaviocopes.com/javascript-async-defer/#with-defer-in-the-head)
 - <a href="http://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup/24070373#24070373">JavaScript loading modern approach</a>
 
 jQuery
