@@ -166,10 +166,9 @@
 - 1: Реализовать для meal Binding/ Update/ Validation. Проверить работу при пустом значении `calories`.
 - 2: Перевести `meals.jsp` на работу по ajax. Стиль строки таблицы сделать в зависимости от `excess`, время отображать без `T`. Добавить i18n.
 - 3: Починить meals тесты, добавить тест на неавторизованный доступ
-- 4: Добавить валидацию в `JdbcMealRepository` 
 
 ### Optional
-- 5: Подключить datetime-picker к фильтрам и модальному окну добавления/редактирования еды
+- 4: Подключить datetime-picker к фильтрам и модальному окну добавления/редактирования еды
   - <a href="http://xdsoft.net/jqplugins/datetimepicker/">DateTimePicker jQuery plugin</a>
   - [jQuery: конверторы](https://jquery-docs.ru/jQuery.ajax/#using-converters)
 
