@@ -81,11 +81,14 @@ Datatables перевели на ajax (`"ajax": {"url": ajaxUrl, ..`), те пр
 -  <a href="http://www.mkyong.com/spring-mvc/spring-mvc-handler-interceptors-example/">Spring interceptors</a>.
 
 #### Apply 10_08_profile_jsptag.patch
+**Глюк Хрома - у меня поле `email` у User показывается неверно (как для admin). В другом браузере, анонимном окне и коде страницы (Ctrl+U) все ок. Я решил локально обновлением Хрома. Еще решения:**
+ - [В своем браузере](https://www.howtogeek.com/425270/how-to-disable-form-autofill-in-google-chrome)
+ - [Chrome ignores autocomplete=“off”](https://stackoverflow.com/questions/12374442/chrome-ignores-autocomplete-off)
+ - [Disabling Chrome Autofill](https://stackoverflow.com/questions/15738259/disabling-chrome-autofill)
+
 > - Создал отдельный `ProfileUIController` для операций с профилем (вместо `RootController`)
 > - Упростил: в `inputField.tag` передаю для label код локализации
 > - В профиль добавил кнопку "Cancel"
-
-**Глюк Хрома - у меня поле `email` у User показывается неверно (как для admin). В другом браузере, анонимном окне и коде страницы (Ctrl+U) все ок. Решения принимаются, `autocomplete="off"` у меня не помог.** 
 
 - [Bootstrap 4 form validation example](http://nicesnippets.com/snippet/bootstrap-4-form-validation-with-form-all-input-example)
 - <a href="http://www.techrepublic.com/article/an-introduction-to-jsp-20s-tag-files/">Делаем jsp tag для ввода поля формы</a>.
