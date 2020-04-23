@@ -47,6 +47,8 @@
 > - Вместо смену локали в `lang.jsp` через javascript сделал `href=${requestScope['javax.servlet.forward.request_uri']}?lang=..`
 > - Добавил [Collapsing The Navigation Bar](https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp)
 
+**В конце `bodyHeader.jsp` задублировались строки. Можете поправить у себя или оставить до накатки последнего патча `11_13_fix`.**
+
 ## Заключительное 11-е занятие
 
 ### Локализация:
@@ -90,6 +92,8 @@
 
 ###  ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png)  <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFZkpVM19QWFBOQ2c">3. Деплой приложения в Heroku.</a>
 #### Apply 11_12_heroku.patch
+#### Apply 11_13_fix.patch
+
 > - Добавил зависимости `postgres` в профиль мавена `heroku`
 > - [Поменял настройки `dataSource` для профиля `heroku`](http://stackoverflow.com/questions/10684244/dbcp-validationquery-for-different-databases). 
 При опускании/поднятии приложения в heroku.com портятся коннекты в пуле и необходимо их валидировать. 
